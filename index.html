@@ -8,19 +8,27 @@
     <title>Encriptador</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="container">
     <form>
-      <label for="name">Name:</label><br>
-      <input class='entrada' id="entrada" type="text" id="name" name="name"><br>
-      <input type="button" id="enviar" value="cryptografar">
-      <input type="button" id="enviar2" value="decryptografar">
+      <textarea id="entrada" placeholder="Digite Seu Texto" type="text" id="name" name="name"></textarea>
+      <div id="botao"> 
+        <input class='botao' type="button" id="enviar" value="Criptografar">
+      <input class='botao' type="button" id="enviar2" value="Descriptografar">
+      </div>
+      
     </form>
 
-    <div>
-      <div> <h1 id="result"></h1></div>
-      <button id="Copy">Copiar</button>
+    <div class="SecondBox">
+      <div id="boxbox"><h1 id="result">
+        <div>
+          <img src="./Logo.svg" alt="girl searching with a magnifying glass">
+          <h1>Nenhuma mensagem encontrada</h1>
+          <span>Digite um texto que você deseja criptografar ou descriptografar.</span>
+        </div>
+      </h1></div>
+      <button class='botao' id="Copy">Copiar</button>
     </div>
-    
+  </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>

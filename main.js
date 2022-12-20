@@ -1,23 +1,28 @@
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import { setupCounter } from './counter.js'
-
+import './logo.svg'
 var simpleCrypto = new SimpleCrypto("123")
 
 document.getElementById("enviar").addEventListener("click", function() {
-  
-   
   let textobase = document.getElementById("entrada").value;
   let secret = simpleCrypto.encrypt(textobase)
   document.getElementById("result").innerHTML = secret
-
-
 });
 
 document.getElementById("enviar2").addEventListener("click", function() {
-  let textobase = document.getElementById("entrada").value;
-  let secret = simpleCrypto.decrypt(textobase)
-  document.getElementById("result").innerHTML = secret
+  try {
+    let textobase = document.getElementById("entrada").value;
+    let secret = simpleCrypto.decrypt(textobase)
+    document.getElementById("result").innerHTML = secret
+  } catch (error) {
+    console.error(error);
+    document.getElementById("result").innerHTML = "";
+    let errorMessage = document.createElement("h1");
+    errorMessage.textContent = "Nenhuma mensagem encontrada";
+    let imageElement = document.createElement("img");
+    imageElement.src = "logo.svg";
+    document.getElementById("result").appendChild(imageElement);
+    document.getElementById("result").appendChild(errorMessage);
+  }
 });
 
 document.getElementById("Copy").addEventListener("click", function() {
@@ -29,17 +34,6 @@ document.getElementById("Copy").addEventListener("click", function() {
   document.execCommand("copy");
   document.body.removeChild(textarea);
 });
-/* const test ="Bem vindo ao novo jogo da aodajksdjaskdasdjaksjd"
 
-const secret = simpleCrypto.encrypt(test)
-console.log(secret)
-const decifrado = simpleCrypto.decrypt(secret)
-console.log(decifrado)
-
-const cryppp = ""
-
-const novoo = simpleCrypto.decrypt(cryppp)
-
-console.log(novoo) */
 
 
