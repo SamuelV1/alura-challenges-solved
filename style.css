@@ -1,0 +1,15 @@
+body{
+  background-color: #E5E5E5;
+}
+
+.entrada{
+  min-height:200px;
+}
+#result{
+  height: 200px;
+  font-size: small;
+  width: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-wrap: break-word;
+}
